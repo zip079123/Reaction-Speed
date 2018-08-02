@@ -14,7 +14,7 @@
 
         function circleRadius(){
             var radius = Math.random();
-            radius = radius*100;
+            radius = radius*50;
             return radius;
         }
 
@@ -24,11 +24,11 @@
             a = a+document.getElementById("score").innerHTML;
             var time = Math.random();
             if (a < 10) {
-                time = time*5000;
-            }else if(a>=10&& a<30){
                 time = time*3000;
-            }else if(a>=30&&a<50){
-                time = time*500;
+            }else if(a>=10&& a<30){
+                time = time*1000;
+            }else if(a>=30&&a<49){
+                time = time*100;
             }else{
                 alert("Game Over!"+"Your total time is"+s);
             }
@@ -42,19 +42,22 @@
             setTimeout(function(){
 
                 if(Math.random()>0.5){
-
+                    document.getElementById("box").style.width=Math.floor(Math.random()*50+50)+"px";
+                    document.getElementById("box").style.height=Math.floor(Math.random()*50+50)+"px";
                     document.getElementById("box").style.borderRadius=circleRadius()+"px";
                     }else{
+                    document.getElementById("box").style.width=Math.floor(Math.random()*50+50)+"px";
+                    document.getElementById("box").style.height=Math.floor(Math.random()*50+50)+"px";
                     document.getElementById("box").style.borderRadius="0";
                     }                        
 
                 var top=Math.random();
 
-                top=top*300;
+                top=(top*document.body.clientHeight*0.8);
 
                 var left=Math.random();
 
-                left=left*200;
+                left=(left*document.body.clientWidth*0.8);
 
                 document.getElementById("box").style.top = top +"px";
 
@@ -69,11 +72,11 @@
 
         }
 
-
-            var s = 0;
-            var t;
+        var s = 0;
+        var t;
 
         function timer(){
+
             s = s+1;
             t=setTimeout("timer()",1000)
             document.getElementById("showtime").innerHTML=s;
@@ -90,7 +93,6 @@
 
             document.getElementById("time").innerHTML=reactionTime;
             document.getElementById("score").innerHTML++;
-            
             
         }
 
