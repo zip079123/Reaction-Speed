@@ -22,7 +22,7 @@
         function changeTime(){
             var a = 0;
             a = a+document.getElementById("score").innerHTML;
-            var time = Math.random();
+            var time = 1;
             if (a < 10) {
                 time = time*3000;
             }else if(a>=10&& a<30){
